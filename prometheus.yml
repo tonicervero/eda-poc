@@ -1,0 +1,18 @@
+global:
+  scrape_interval: 5s  # Scrape every 5 seconds
+
+scrape_configs:
+  - job_name: 'kafka'
+    static_configs:
+      - targets:
+          - 'kafka:9092'
+
+  - job_name: 'zookeeper'
+    static_configs:
+      - targets:
+          - 'zookeeper:2181'
+
+  - job_name: 'sensor'
+    static_configs:
+      - targets:
+          - 'localhost:8000'  # Example sensor metrics endpoint
